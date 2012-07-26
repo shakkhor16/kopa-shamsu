@@ -47,7 +47,32 @@ namespace Kopa_Shamsu
 
                 players.Add(player);
             }
+            return AssignDuplicateNumbers(players);
+        }
+
+        public List<Player>  AssignDuplicateNumbers(List<Player> players)
+        {
+            Dictionary<string,int> dictionary = new Dictionary<string, int>();
+
+            foreach (Player player in players)
+            {
+                if(dictionary.ContainsKey(player.Alias))
+                {
+                    dictionary[player.Alias]++;
+
+                    if (dictionary[player.Alias] > 0)
+                    {
+                        player.Alias = player.Alias + "_" + dictionary[player.Alias];
+                    }
+                }
+                else
+                {
+                    dictionary.Add(player.Alias,0);
+                }
+            }
+
             return players;
         }
+
     }
 }
