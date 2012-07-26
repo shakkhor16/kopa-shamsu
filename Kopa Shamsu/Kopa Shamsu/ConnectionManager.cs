@@ -1,18 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Net;
 using System.Net.Sockets;
+using System.Text;
 
 namespace Kopa_Shamsu
 {
-    class ConnectionManager
+    internal class ConnectionManager
     {
-        private UdpClient udpClient;
+        private readonly byte[] query = {255, 255, 255, 255, 103, 101, 116, 115, 116, 97, 116, 117, 115};
+        private readonly UdpClient udpClient;
         private IPEndPoint ipEndPoint;
-        private byte[] query = { 255, 255, 255, 255, 103, 101, 116, 115, 116, 97, 116, 117, 115 };
 
         public ConnectionManager(string hostName, int port)
         {

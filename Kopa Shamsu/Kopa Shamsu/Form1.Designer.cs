@@ -32,12 +32,12 @@
             this.textBoxAddress = new System.Windows.Forms.TextBox();
             this.textBoxPort = new System.Windows.Forms.TextBox();
             this.dataGridViewServerarameters = new System.Windows.Forms.DataGridView();
+            this.ColumnParameter = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBoxServer = new System.Windows.Forms.GroupBox();
             this.groupBoxServerParameters = new System.Windows.Forms.GroupBox();
             this.groupBoxPlayers = new System.Windows.Forms.GroupBox();
             this.dataGridViewPlayers = new System.Windows.Forms.DataGridView();
-            this.ColumnParameter = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnAlias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnKills = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPing = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,6 +87,23 @@
             this.dataGridViewServerarameters.Size = new System.Drawing.Size(418, 150);
             this.dataGridViewServerarameters.TabIndex = 4;
             // 
+            // ColumnParameter
+            // 
+            this.ColumnParameter.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnParameter.DataPropertyName = "Parameter";
+            this.ColumnParameter.HeaderText = "Parameter";
+            this.ColumnParameter.Name = "ColumnParameter";
+            this.ColumnParameter.ReadOnly = true;
+            // 
+            // ColumnValue
+            // 
+            this.ColumnValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnValue.DataPropertyName = "Value";
+            this.ColumnValue.FillWeight = 150F;
+            this.ColumnValue.HeaderText = "Value";
+            this.ColumnValue.Name = "ColumnValue";
+            this.ColumnValue.ReadOnly = true;
+            // 
             // groupBoxServer
             // 
             this.groupBoxServer.Controls.Add(this.textBoxAddress);
@@ -134,23 +151,6 @@
             this.dataGridViewPlayers.Size = new System.Drawing.Size(418, 150);
             this.dataGridViewPlayers.TabIndex = 4;
             // 
-            // ColumnParameter
-            // 
-            this.ColumnParameter.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnParameter.DataPropertyName = "Parameter";
-            this.ColumnParameter.HeaderText = "Parameter";
-            this.ColumnParameter.Name = "ColumnParameter";
-            this.ColumnParameter.ReadOnly = true;
-            // 
-            // ColumnValue
-            // 
-            this.ColumnValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnValue.DataPropertyName = "Value";
-            this.ColumnValue.FillWeight = 150F;
-            this.ColumnValue.HeaderText = "Value";
-            this.ColumnValue.Name = "ColumnValue";
-            this.ColumnValue.ReadOnly = true;
-            // 
             // ColumnAlias
             // 
             this.ColumnAlias.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -161,21 +161,21 @@
             // 
             // ColumnKills
             // 
-            this.ColumnKills.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ColumnKills.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ColumnKills.DataPropertyName = "Kills";
+            this.ColumnKills.FillWeight = 50F;
             this.ColumnKills.HeaderText = "Kills";
             this.ColumnKills.Name = "ColumnKills";
             this.ColumnKills.ReadOnly = true;
-            this.ColumnKills.Width = 50;
             // 
             // ColumnPing
             // 
-            this.ColumnPing.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ColumnPing.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ColumnPing.DataPropertyName = "Ping";
+            this.ColumnPing.FillWeight = 50F;
             this.ColumnPing.HeaderText = "Ping";
             this.ColumnPing.Name = "ColumnPing";
             this.ColumnPing.ReadOnly = true;
-            this.ColumnPing.Width = 53;
             // 
             // FormMain
             // 
