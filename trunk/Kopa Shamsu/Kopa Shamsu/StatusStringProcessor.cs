@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using Kopa_Shamsu.Entities;
 
 namespace Kopa_Shamsu
 {
-    class StatusStringProcessor
+    internal class StatusStringProcessor
     {
-        private string[] statusStrings;
+        private readonly string[] statusStrings;
 
         public StatusStringProcessor(string statusString)
         {
@@ -17,30 +14,30 @@ namespace Kopa_Shamsu
 
         public List<ServerParameter> GetServerParameters()
         {
-            List<ServerParameter> serverParameters = new List<ServerParameter>();
+            var serverParameters = new List<ServerParameter>();
 
             string[] rawParemeters = statusStrings[1].Split('\\');
 
-            for (int i=1; i<rawParemeters.Length;i+=2)
+            for (int i = 1; i < rawParemeters.Length; i += 2)
             {
-                    ServerParameter serverParameter = new ServerParameter();
-                    serverParameter.Parameter = rawParemeters[i];
-                    serverParameter.Value = rawParemeters[i+1];
-                    serverParameters.Add(serverParameter);
+                var serverParameter = new ServerParameter();
+                serverParameter.Parameter = rawParemeters[i];
+                serverParameter.Value = rawParemeters[i + 1];
+                serverParameters.Add(serverParameter);
             }
 
             return serverParameters;
         }
 
-        public List<Player>  GetPlayers()
+        public List<Player> GetPlayers()
         {
-            List<Player> players = new List<Player>();
+            var players = new List<Player>();
 
-            for (int i = 2; i < statusStrings.Length-1; i++)
+            for (int i = 2; i < statusStrings.Length - 1; i++)
             {
-                Player player = new Player();
+                var player = new Player();
                 string[] rawPlayer =
-                statusStrings[i].Split(' ');
+                    statusStrings[i].Split(' ');
                 player.Kills = rawPlayer[0];
                 player.Ping = rawPlayer[1];
                 player.Alias = rawPlayer[2].Trim('"');
@@ -50,13 +47,13 @@ namespace Kopa_Shamsu
             return AssignDuplicateNumbers(players);
         }
 
-        public List<Player>  AssignDuplicateNumbers(List<Player> players)
+        public List<Player> AssignDuplicateNumbers(List<Player> players)
         {
-            Dictionary<string,int> dictionary = new Dictionary<string, int>();
+            var dictionary = new Dictionary<string, int>();
 
             foreach (Player player in players)
             {
-                if(dictionary.ContainsKey(player.Alias))
+                if (dictionary.ContainsKey(player.Alias))
                 {
                     dictionary[player.Alias]++;
 
@@ -67,12 +64,11 @@ namespace Kopa_Shamsu
                 }
                 else
                 {
-                    dictionary.Add(player.Alias,0);
+                    dictionary.Add(player.Alias, 0);
                 }
             }
 
             return players;
         }
-
     }
 }
