@@ -36,16 +36,14 @@ namespace Kopa_Shamsu
         {
             List<Player> players = new List<Player>();
 
-            string[] rawPlayers = statusStrings[2].Split(' ');
-
-            if (rawPlayers.Length < 3) return null;
-
-            for (int i = 0; i < rawPlayers.Length;i+=3)
+            for (int i = 2; i < statusStrings.Length-1; i++)
             {
                 Player player = new Player();
-                player.Kills = rawPlayers[i];
-                player.Ping = rawPlayers[i + 1];
-                player.Alias = rawPlayers[i + 2].Trim('"');
+                string[] rawPlayer =
+                statusStrings[i].Split(' ');
+                player.Kills = rawPlayer[0];
+                player.Ping = rawPlayer[1];
+                player.Alias = rawPlayer[2].Trim('"');
 
                 players.Add(player);
             }
