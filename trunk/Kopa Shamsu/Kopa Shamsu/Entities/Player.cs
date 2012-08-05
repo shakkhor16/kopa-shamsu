@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Kopa_Shamsu.Entities
+﻿namespace Kopa_Shamsu.Entities
 {
-    class Player
+    internal class Player
     {
         public string Alias { get; set; }
         public string Kills { get; set; }
