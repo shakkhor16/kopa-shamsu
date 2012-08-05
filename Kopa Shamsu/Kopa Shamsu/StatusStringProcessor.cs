@@ -14,7 +14,7 @@ namespace Kopa_Shamsu
 
         public List<ServerParameter> GetServerParameters()
         {
-            var serverParameters = new List<ServerParameter>();
+            List<ServerParameter> serverParameters = new List<ServerParameter>();
 
             string[] rawParemeters = statusStrings[1].Split('\\');
 
@@ -31,7 +31,7 @@ namespace Kopa_Shamsu
 
         public List<Player> GetPlayers()
         {
-            var players = new List<Player>();
+            List<Player> players = new List<Player>();
 
             for (int i = 2; i < statusStrings.Length - 1; i++)
             {
@@ -49,7 +49,7 @@ namespace Kopa_Shamsu
 
         public List<Player> AssignDuplicateNumbers(List<Player> players)
         {
-            var dictionary = new Dictionary<string, int>();
+            Dictionary<string, int> dictionary = new Dictionary<string, int>();
 
             foreach (Player player in players)
             {
