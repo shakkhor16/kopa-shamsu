@@ -5,8 +5,8 @@ namespace Kopa_Shamsu
 {
     public partial class FormMain : Form
     {
-        private string ipAddress = "107.6.124.34";
-        private string port = "2222";
+        private string ipAddress = "127.0.0.1";
+        private string port = "27960";
 
         public FormMain()
         {
