@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 using Kopa_Shamsu.Entities;
 
 namespace Kopa_Shamsu
@@ -36,18 +37,22 @@ namespace Kopa_Shamsu
             for (int i = 2; i < statusStrings.Length - 1; i++)
             {
                 var player = new Player();
-                string[] rawPlayer =
-                    statusStrings[i].Split(' ');
-                player.Kills = rawPlayer[0];
-                player.Ping = rawPlayer[1];
-                player.Alias = rawPlayer[2].Trim('"');
+
+                string[] rawPlayerName =
+                    statusStrings[i].Split('"');
+                player.Alias = RemoveSpacesAndColorCodes(rawPlayerName[1]);
+
+                string[] rawPlayerStats = rawPlayerName[0].Split(' ');
+                player.Kills = rawPlayerStats[0];
+                player.Ping = rawPlayerStats[1];
+                
 
                 players.Add(player);
             }
             return AssignDuplicateNumbers(players);
         }
 
-        public List<Player> AssignDuplicateNumbers(List<Player> players)
+        private List<Player> AssignDuplicateNumbers(List<Player> players)
         {
             Dictionary<string, int> dictionary = new Dictionary<string, int>();
 
@@ -69,6 +74,27 @@ namespace Kopa_Shamsu
             }
 
             return players;
+        }
+
+        private string RemoveSpacesAndColorCodes(string alias)
+        {
+            char[] aliasArray = alias.ToCharArray();
+            StringBuilder aliasBuilder = new StringBuilder();
+
+            for (int i = 0; i < aliasArray.Length;i++)
+            {
+                if (aliasArray[i] == ' ')
+                {
+                    i++;
+                }
+                if (aliasArray[i] == '^')
+                {
+                    i+=2;
+                }
+                aliasBuilder.Append(aliasArray[i]);
+            }
+
+                return aliasBuilder.ToString();
         }
     }
 }
