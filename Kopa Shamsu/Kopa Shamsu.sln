@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kopa Shamsu", "Kopa Shamsu\Kopa Shamsu.csproj", "{A68ACB88-9A1E-403D-9B4F-C26416FD5092}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Urban Terror Packet Repair", "Urban Terror Packet Repair\Urban Terror Packet Repair.csproj", "{6DBB1F51-DCE9-4680-991D-7B4D4CCAF54B}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -17,6 +19,10 @@ Global
 		{A68ACB88-9A1E-403D-9B4F-C26416FD5092}.Debug|x86.Build.0 = Debug|x86
 		{A68ACB88-9A1E-403D-9B4F-C26416FD5092}.Release|x86.ActiveCfg = Release|x86
 		{A68ACB88-9A1E-403D-9B4F-C26416FD5092}.Release|x86.Build.0 = Release|x86
+		{6DBB1F51-DCE9-4680-991D-7B4D4CCAF54B}.Debug|x86.ActiveCfg = Debug|x86
+		{6DBB1F51-DCE9-4680-991D-7B4D4CCAF54B}.Debug|x86.Build.0 = Debug|x86
+		{6DBB1F51-DCE9-4680-991D-7B4D4CCAF54B}.Release|x86.ActiveCfg = Release|x86
+		{6DBB1F51-DCE9-4680-991D-7B4D4CCAF54B}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

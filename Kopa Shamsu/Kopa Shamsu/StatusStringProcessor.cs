@@ -91,7 +91,7 @@ namespace Kopa_Shamsu
                 {
                     i+=2;
                 }
-                aliasBuilder.Append(aliasArray[i]);
+                if(i<aliasArray.Length) aliasBuilder.Append(aliasArray[i]);
             }
 
                 return aliasBuilder.ToString();
