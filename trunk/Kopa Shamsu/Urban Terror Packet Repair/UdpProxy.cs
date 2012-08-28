@@ -33,9 +33,10 @@ namespace Urban_Terror_Packet_Repair
             sendEndpoint = new System.Net.IPEndPoint(IPAddress.Parse(address), port);
             connectedClientEndpoint = new System.Net.IPEndPoint(IPAddress.Any, port);
 
+            ThreadSafeSingleton singleton = ThreadSafeSingleton.Instance;
             byte[] data = new byte[65535];
 
-            while (true)
+            while (!singleton.IsTimeToExit)
             {
                 if (listenSocket.Available > 0)
                 {
