@@ -21,6 +21,8 @@ namespace Urban_Terror_Packet_Repair
             InitializeComponent();
             textBoxAddress.Text = ipAddress;
             textBoxPort.Text = port;
+            ThreadSafeSingleton singleton = ThreadSafeSingleton.Instance;
+            singleton.IsTimeToExit = false;
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
@@ -44,7 +46,8 @@ namespace Urban_Terror_Packet_Repair
         {
             if(proxyThread!=null)
             {
-                //Application.
+                ThreadSafeSingleton singleton = ThreadSafeSingleton.Instance;
+                singleton.IsTimeToExit = true;
             }
         }
     }
