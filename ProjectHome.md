@@ -1,0 +1,1 @@
+This project is intended to function as a urban terror server status checker with advanced features. This project can provide realtime status update for Urban Terror servers, as well as warn the user on various types of events. For example, when certain player comes online or when a certain server has went offline.
